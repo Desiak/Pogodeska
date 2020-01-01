@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/Pogodeska/static/css/main.04adc203.chunk.css",
+    "main.js": "/Pogodeska/static/js/main.02bcef41.chunk.js",
+    "main.js.map": "/Pogodeska/static/js/main.02bcef41.chunk.js.map",
+    "runtime~main.js": "/Pogodeska/static/js/runtime~main.c22b2ce3.js",
+    "runtime~main.js.map": "/Pogodeska/static/js/runtime~main.c22b2ce3.js.map",
+    "static/js/2.c24b131b.chunk.js": "/Pogodeska/static/js/2.c24b131b.chunk.js",
+    "static/js/2.c24b131b.chunk.js.map": "/Pogodeska/static/js/2.c24b131b.chunk.js.map",
+    "index.html": "/Pogodeska/index.html",
+    "precache-manifest.ae894ea8c1726d7325da0a5b634a1cca.js": "/Pogodeska/precache-manifest.ae894ea8c1726d7325da0a5b634a1cca.js",
+    "service-worker.js": "/Pogodeska/service-worker.js",
+    "static/css/main.04adc203.chunk.css.map": "/Pogodeska/static/css/main.04adc203.chunk.css.map"
+  }
+}
