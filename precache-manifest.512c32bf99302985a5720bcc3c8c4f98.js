@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "c3f8c32cf6a0aac0ad8f810e5855ff30",
+    "revision": "962124b0681edb03ddfc44990185afc6",
     "url": "/Pogodeska/index.html"
   },
   {
-    "revision": "45c2f5a7b9a977d5a6d8",
+    "revision": "cb3476f128ab0edc2fe7",
     "url": "/Pogodeska/static/css/main.04adc203.chunk.css"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Pogodeska/static/js/2.c24b131b.chunk.js"
   },
   {
-    "revision": "45c2f5a7b9a977d5a6d8",
-    "url": "/Pogodeska/static/js/main.02bcef41.chunk.js"
+    "revision": "cb3476f128ab0edc2fe7",
+    "url": "/Pogodeska/static/js/main.fdfed2ca.chunk.js"
   },
   {
     "revision": "d76d8c143ce3ae3689a2",
