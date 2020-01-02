@@ -1,9 +1,9 @@
 import React from "react";
 import "./App.css";
-import DayMenu from "./komponenty/DayMenu";
+import DayMenu from "./components/DayMenu";
 import { setInterval } from "timers";
-import SpecificForecast from "./komponenty/SpecificForecast";
-import BasicInfo from "./komponenty/BasicInfo";
+import SpecificForecast from "./components/SpecificForecast";
+import BasicInfo from "./components/BasicInfo";
 //klucz
 const APIKey = "efa2ef11f117f7485b2fca8e87a3a2f5";
 class App extends React.Component {
