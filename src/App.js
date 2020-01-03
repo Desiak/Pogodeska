@@ -80,7 +80,7 @@ class App extends React.Component {
     }
   };
   getBasicInfo = () => {
-    const API = `http://api.openweathermap.org/data/2.5/weather?q=${this.state.city}&APPID=${APIKey}&units=metric&lang=pl`;
+    const API = `https://api.openweathermap.org/data/2.5/weather?q=${this.state.city}&APPID=${APIKey}&units=metric&lang=pl`;
 
     fetch(API)
       .then(response => {
