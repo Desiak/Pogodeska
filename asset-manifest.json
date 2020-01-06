@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/Pogodeska/static/css/main.04adc203.chunk.css",
+    "main.css": "/Pogodeska/static/css/main.15032625.chunk.css",
     "main.js": "/Pogodeska/static/js/main.41802465.chunk.js",
     "main.js.map": "/Pogodeska/static/js/main.41802465.chunk.js.map",
     "runtime~main.js": "/Pogodeska/static/js/runtime~main.c22b2ce3.js",
@@ -8,8 +8,8 @@
     "static/js/2.c24b131b.chunk.js": "/Pogodeska/static/js/2.c24b131b.chunk.js",
     "static/js/2.c24b131b.chunk.js.map": "/Pogodeska/static/js/2.c24b131b.chunk.js.map",
     "index.html": "/Pogodeska/index.html",
-    "precache-manifest.2804a73dbc81c3b4008c7340d113b9fc.js": "/Pogodeska/precache-manifest.2804a73dbc81c3b4008c7340d113b9fc.js",
+    "precache-manifest.464f8127d8295542831724a21b764652.js": "/Pogodeska/precache-manifest.464f8127d8295542831724a21b764652.js",
     "service-worker.js": "/Pogodeska/service-worker.js",
-    "static/css/main.04adc203.chunk.css.map": "/Pogodeska/static/css/main.04adc203.chunk.css.map"
+    "static/css/main.15032625.chunk.css.map": "/Pogodeska/static/css/main.15032625.chunk.css.map"
   }
 }
