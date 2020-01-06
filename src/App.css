@@ -52,3 +52,12 @@
   opacity: 0.7;
   min-width: 150px;
 }
+.carousel-control-next,
+.carousel-control-prev {
+  filter: invert(20%);
+}
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  height: 80px;
+  width: 80px;
+}
