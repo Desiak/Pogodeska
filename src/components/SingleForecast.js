@@ -8,10 +8,10 @@ const SingleForecast = props => {
         <b>{props.description}</b>
       </p>
       <div className="forecast-info">
-        <p>
-          Temperatura(odczuwalna): {props.temp}({props.feelsTemp})&#176;C
+        <p className="temperature">
+          {props.temp}({props.feelsTemp})&#176;C
         </p>
-        <p>Ciśnienie: {props.press} hPa</p>
+        <p className="pressure">{props.press} hPa</p>
         <p>Wiatr: {props.wind} m/s</p>
         <p>Wilgotność: {props.humidity}%</p>
       </div>
