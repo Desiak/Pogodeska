@@ -9,21 +9,13 @@ const BasicInfo = props => {
   const sunset = new Date(props.sunset * 1000).toLocaleTimeString();
 
   return (
-    <div
-      className="info"
-      style={{
-        backgroundPosition: "center",
-        padding: "25px",
-        color: "white",
-        backgroundImage: `url(${props.img})`
-      }}
-    >
-      <h3>{props.city}</h3>
+    <div className="info">
+      <h1>{props.city}</h1>
       <div className="citySelect">
         <select
           className="form-control"
           onChange={props.citySelector}
-          placeholder="Zmień miasto..."
+          onClick={props.changeInfo}
         >
           <option>Kraków</option>
           <option>Warszawa</option>
@@ -35,30 +27,11 @@ const BasicInfo = props => {
           <option>Lublin</option>
         </select>
         <br></br>
-        <button
-          onClick={props.changeInfo}
-          className="btn btn-info"
-          style={{ opacity: "0.86" }}
-        >
-          Aktualizuj
-        </button>
-        <br></br>
       </div>
-
-      <br></br>
-      <div
-        style={{
-          opacity: "0.9",
-          paddingTop: "10px",
-          border: "2px solid white",
-          borderRadius: "7px",
-          backgroundColor: "rgb(0, 139,139, 0.75)",
-          backgroundRepeat: "no-repeat"
-        }}
-      >
-        <p>Dzisiaj jest: {props.day}</p>
+      <div className="basicInfo">
+        <p className="basicInfo__day">{props.day}</p>
+        <p className="basicInfo__clock"> {props.hour}</p>
         <p>{today}</p>
-        <p>Aktualnie jest godzina: {props.hour}</p>
         <p>Wschód słońca: {sunrise}</p>
         <p>Zachód słońca: {sunset}</p>
         <p>

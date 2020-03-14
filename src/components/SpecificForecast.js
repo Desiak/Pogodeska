@@ -16,24 +16,12 @@ const SpecificForecast = props => {
       />
     );
   });
-  // return displayWeather;
   const slideOne = displayWeather.slice(0, 3);
   const slideTwo = displayWeather.slice(3, 6);
   const slideThree = displayWeather.slice(6, 9);
 
   return (
     <div className="forecast-header">
-      <h2
-        style={{
-          padding: "10px",
-          margin: "20px 25%",
-          color: "white",
-          borderRadius: "14px",
-          backgroundColor: "rgba(0, 139, 139, 0.650)"
-        }}
-      >
-        Prognoza pogody w mieście {props.city}
-      </h2>
       <div
         id="carouselForecast"
         className="carousel slide"
@@ -69,7 +57,7 @@ const SpecificForecast = props => {
           <span className="sr-only">Next</span>
         </a>
       </div>
-      <button className="btn btn-dark hide" onClick={props.hide}>
+      <button className="btn btn-secondary hide" onClick={props.hide}>
         Ukryj
       </button>
     </div>
