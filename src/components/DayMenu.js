@@ -9,7 +9,7 @@ const DayMenu = props => {
           className="toggleMenu"
           onClick={() => props.onToggle()}
         >
-          <p>{props.toggle ? "Ukryj menu" : "Pokaż menu"}</p>
+          <p>{props.toggle ? "Ukryj menu" : "Pokaż opcje prognozy"}</p>
         </div>
         <div className="dropdown">
           <div className="collapse" id="menu">
@@ -18,7 +18,7 @@ const DayMenu = props => {
               className="btn btn-light top"
               onClick={() => props.switch()}
             >
-              Prognoza na 24 godziny (co 3 godziny)
+              24h co 3 godziny
             </button>
             <br></br>
             <button
@@ -26,7 +26,7 @@ const DayMenu = props => {
               className="btn btn-light top"
               onClick={() => props.switchTomorrow()}
             >
-              Prognoza na 48 godzin (co 6 godzin)
+              48h co 6 godzin
             </button>
             <br></br>
             <button
@@ -34,14 +34,14 @@ const DayMenu = props => {
               className="btn btn-light top"
               onClick={props.switch3days}
             >
-              Prognoza na 96 godzin (co 12 godzin)
+              96h co 12 godzin
             </button>
           </div>
         </div>
       </div>
       {!props.dispInfo ? (
         <div className="alert alert-primary alert">
-          Wybierz jedną z opcji z powyższego menu
+          Wybierz jedną z opcji z menu
         </div>
       ) : null}
     </div>
