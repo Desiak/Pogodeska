@@ -1,15 +1,17 @@
 {
   "files": {
-    "main.css": "/Pogodeska/static/css/main.15032625.chunk.css",
-    "main.js": "/Pogodeska/static/js/main.41802465.chunk.js",
-    "main.js.map": "/Pogodeska/static/js/main.41802465.chunk.js.map",
+    "main.css": "/Pogodeska/static/css/main.0caf4de5.chunk.css",
+    "main.js": "/Pogodeska/static/js/main.94203afd.chunk.js",
+    "main.js.map": "/Pogodeska/static/js/main.94203afd.chunk.js.map",
     "runtime~main.js": "/Pogodeska/static/js/runtime~main.c22b2ce3.js",
     "runtime~main.js.map": "/Pogodeska/static/js/runtime~main.c22b2ce3.js.map",
-    "static/js/2.c24b131b.chunk.js": "/Pogodeska/static/js/2.c24b131b.chunk.js",
-    "static/js/2.c24b131b.chunk.js.map": "/Pogodeska/static/js/2.c24b131b.chunk.js.map",
+    "static/js/2.a3f79a73.chunk.js": "/Pogodeska/static/js/2.a3f79a73.chunk.js",
+    "static/js/2.a3f79a73.chunk.js.map": "/Pogodeska/static/js/2.a3f79a73.chunk.js.map",
     "index.html": "/Pogodeska/index.html",
-    "precache-manifest.464f8127d8295542831724a21b764652.js": "/Pogodeska/precache-manifest.464f8127d8295542831724a21b764652.js",
+    "precache-manifest.66f81610f51d2f3f3ad5db844afa1fda.js": "/Pogodeska/precache-manifest.66f81610f51d2f3f3ad5db844afa1fda.js",
     "service-worker.js": "/Pogodeska/service-worker.js",
-    "static/css/main.15032625.chunk.css.map": "/Pogodeska/static/css/main.15032625.chunk.css.map"
+    "static/css/main.0caf4de5.chunk.css.map": "/Pogodeska/static/css/main.0caf4de5.chunk.css.map",
+    "static/media/style.css": "/Pogodeska/static/media/backImg.ca793ec5.png",
+    "static/media/cinegraph.mp4": "/Pogodeska/static/media/cinegraph.a06942b9.mp4"
   }
 }
