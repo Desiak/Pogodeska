@@ -15,7 +15,7 @@ const DayMenu = props => {
           <div className="collapse" id="menu">
             <button
               type="button"
-              className="btn btn-light top"
+              className="btn btn-dark top"
               onClick={() => props.switch()}
             >
               24h co 3 godziny
@@ -23,7 +23,7 @@ const DayMenu = props => {
             <br></br>
             <button
               type="button"
-              className="btn btn-light top"
+              className="btn btn-dark top"
               onClick={() => props.switchTomorrow()}
             >
               48h co 6 godzin
@@ -31,7 +31,7 @@ const DayMenu = props => {
             <br></br>
             <button
               type="button"
-              className="btn btn-light top"
+              className="btn btn-dark top"
               onClick={props.switch3days}
             >
               96h co 12 godzin

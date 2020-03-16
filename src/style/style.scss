@@ -107,7 +107,8 @@ body {
   margin: 0 auto;
 }
 .single-forecast {
-  max-width: 180px;
+  max-width: 200px;
+  flex-grow: 1;
   height: 340px;
   display: flex;
   flex-wrap: wrap;
@@ -129,6 +130,7 @@ body {
 .carousel-control-next-icon {
   height: 30px;
   width: 30px;
+  opacity: 0.2;
 }
 .temperature {
   font-size: 32px;
@@ -170,7 +172,9 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  flex-wrap: wrap;
+  @media (max-width: 699px) {
+    flex-wrap: wrap;
+  }
 }
 
 .menu {
@@ -189,7 +193,10 @@ body {
   padding-bottom: 5px;
 }
 
-.btn-light {
+.btn-dark {
+  background-color: rgba(0, 0, 0, 0);
+  // border: none;
   min-width: 250px;
   max-width: 350px;
+  border-color: white;
 }
