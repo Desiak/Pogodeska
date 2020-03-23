@@ -17,7 +17,7 @@ body {
   padding-bottom: 50px;
   width: 90%;
   min-width: 360px;
-  background: rgba(0, 0, 0, 0.712);
+  background: rgba(0, 0, 0, 0.842);
   margin: auto;
   .header {
     grid-area: 1/1/2/3;
@@ -105,6 +105,12 @@ body {
 .carousel-inner {
   width: 90%;
   margin: 0 auto;
+  #first {
+    div:first-child {
+      background-color: rgba(101, 147, 226, 0.722);
+      border: 2px solid white;
+    }
+  }
 }
 .single-forecast {
   max-width: 200px;
@@ -116,7 +122,7 @@ body {
   align-items: center;
   margin: 20px 8px;
   color: white;
-  background-color: rgba(101, 147, 226, 0.521);
+  background-color: rgba(101, 147, 226, 0.45);
   padding: 15px;
   border-radius: 18px;
 }
@@ -171,7 +177,7 @@ body {
 .carousel-item.active {
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-around;
   @media (max-width: 699px) {
     flex-wrap: wrap;
   }
@@ -195,8 +201,10 @@ body {
 
 .btn-dark {
   background-color: rgba(0, 0, 0, 0);
-  // border: none;
   min-width: 250px;
   max-width: 350px;
-  border-color: white;
+  &:hover {
+    border-color: white;
+    transition: 0.4s;
+  }
 }

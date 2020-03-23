@@ -28,7 +28,9 @@ const SpecificForecast = props => {
         data-ride="carousel"
       >
         <div className="carousel-inner">
-          <div className="carousel-item active">{slideOne}</div>
+          <div className="carousel-item active" id="first">
+            {slideOne}
+          </div>
           <div className="carousel-item">{slideTwo}</div>
           <div className="carousel-item">{slideThree}</div>
         </div>
