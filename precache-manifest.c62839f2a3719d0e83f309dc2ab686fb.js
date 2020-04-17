@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "ce01098e08a3d30c0ca83f25fa25597b",
+    "revision": "34594c4cffff182ce431936418400496",
     "url": "/Pogodeska/index.html"
   },
   {
-    "revision": "33152eaa8c3dc735c936",
-    "url": "/Pogodeska/static/css/main.d8da75a2.chunk.css"
+    "revision": "2322643f0dcf058a553a",
+    "url": "/Pogodeska/static/css/main.23677d45.chunk.css"
   },
   {
     "revision": "e38e2dba09c59e11a74f",
     "url": "/Pogodeska/static/js/2.a649452d.chunk.js"
   },
   {
-    "revision": "33152eaa8c3dc735c936",
-    "url": "/Pogodeska/static/js/main.9c4e4a7d.chunk.js"
+    "revision": "2322643f0dcf058a553a",
+    "url": "/Pogodeska/static/js/main.57de75f4.chunk.js"
   },
   {
     "revision": "e460cf218b67a7d85c0f",
