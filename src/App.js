@@ -18,7 +18,7 @@ class App extends React.Component {
     toggleMenu: false,
     city: "Kraków",
     forecast: null,
-    forecastNum: 0
+    forecastNum: 0,
   };
   //toggle menu
   onClickToggle = () => {
@@ -29,20 +29,20 @@ class App extends React.Component {
     const API = `https://api.openweathermap.org/data/2.5/weather?q=${this.state.city}&APPID=${APIKey}&units=metric&lang=pl`;
 
     fetch(API)
-      .then(response => {
+      .then((response) => {
         if (response.ok) {
           return response;
         }
         throw Error("Nie udało się");
       })
-      .then(response => response.json())
-      .then(data => {
+      .then((response) => response.json())
+      .then((data) => {
         this.setState({
           sunrise: data.sys.sunrise,
-          sunset: data.sys.sunset
+          sunset: data.sys.sunset,
         });
       })
-      .catch(err => {
+      .catch((err) => {
         console.log(err);
       });
   };
@@ -52,14 +52,14 @@ class App extends React.Component {
     const API = `https://api.openweathermap.org/data/2.5/forecast?q=${this.state.city},PL&appid=${APIKey}&units=metric&lang=pl`;
 
     fetch(API)
-      .then(response => {
+      .then((response) => {
         if (response.ok) {
           return response;
         }
         throw Error("Nie udało się pobrać danych!");
       })
-      .then(response => response.json())
-      .then(data => {
+      .then((response) => response.json())
+      .then((data) => {
         //funkcja która iteruje odpowiednią ilość(ustalaną w zależności od wybranej opcji) elementów tablicy. Objęte elementy będą wrzucane do tablicy i wyświtlane na stronie.
         const forecast = data.list.slice(0, this.state.forecastNum);
         let array = [];
@@ -70,7 +70,7 @@ class App extends React.Component {
         } else if (forecast.length === 33) {
           array = forecast.filter((x, i) => i % 4 === 0);
         }
-        const arrForecast = array.map(elem => {
+        const arrForecast = array.map((elem) => {
           return {
             time: elem.dt_txt,
             temp: elem.main.temp,
@@ -78,14 +78,14 @@ class App extends React.Component {
             press: elem.main.pressure,
             humidity: elem.main.humidity,
             wind: elem.wind.speed,
-            description: elem.weather[0].description
+            description: elem.weather[0].description,
           };
         });
         this.setState({
-          forecast: arrForecast
+          forecast: arrForecast,
         });
       })
-      .catch(err => {
+      .catch((err) => {
         console.log(err);
       });
   };
@@ -96,7 +96,7 @@ class App extends React.Component {
       displayForecast: true,
       displayToday: false,
       displayTomorrow: false,
-      forecastNum: 33
+      forecastNum: 33,
     });
   };
 
@@ -105,7 +105,7 @@ class App extends React.Component {
 
     this.setState({
       displayForecast: true,
-      forecastNum: 17
+      forecastNum: 17,
     });
   };
 
@@ -113,35 +113,35 @@ class App extends React.Component {
     this.getWeather();
     this.setState({
       displayForecast: true,
-      forecastNum: 9
+      forecastNum: 9,
     });
   };
 
   getCurrentTime = () => {
     this.setState({
-      hour: new Date().toLocaleTimeString()
+      hour: new Date().toLocaleTimeString(),
     });
   };
 
   getCurrentDay = () => {
     const days = [
       "Niedziela",
-      "Poniedzialek",
+      "Poniedziałek",
       "Wtorek",
       "Środa",
       "Czwartek",
       "Piątek",
-      "Sobota"
+      "Sobota",
     ];
     const day = this.state.data.getDay();
     this.setState({
-      day: days[day]
+      day: days[day],
     });
   };
 
-  citySelector = e => {
+  citySelector = (e) => {
     this.setState({
-      city: e.target.value
+      city: e.target.value,
     });
   };
 
@@ -152,7 +152,7 @@ class App extends React.Component {
 
   onClickHide = () => {
     this.setState({
-      displayForecast: false
+      displayForecast: false,
     });
   };
 
