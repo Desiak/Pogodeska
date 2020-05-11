@@ -9,6 +9,6 @@ You may see it live at : https://desiak.github.io/Pogodeska/
 
 Used technologies: JS, Sass, React, Bootstrap
 
-Cinegraph made out of this video: https://www.pexels.com/video/person-drinking-coffee-while-viewing-the-sea-1776352/
+Cinegraph made out of this video: https://www.pexels.com/video/glass-ball-by-the-shore-857045/
 
-API (one and only :D) : https://openweathermap.org/
+API  : https://openweathermap.org/
