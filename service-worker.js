@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/Pogodeska/precache-manifest.c62839f2a3719d0e83f309dc2ab686fb.js"
+  "/Pogodeska/precache-manifest.da72f29776fd1fe23559a1e24e514878.js"
 );
 
 self.addEventListener('message', (event) => {
