@@ -4,8 +4,8 @@ import DayMenu from "./components/DayMenu";
 import { setInterval } from "timers";
 import SpecificForecast from "./components/SpecificForecast";
 import BasicInfo from "./components/BasicInfo";
-import video from "./assets/cinegraph.mp4";
-//klucz
+import video from "./assets/backwideo1.mp4";
+//key
 const APIKey = "efa2ef11f117f7485b2fca8e87a3a2f5";
 class App extends React.Component {
   state = {
@@ -60,7 +60,7 @@ class App extends React.Component {
       })
       .then((response) => response.json())
       .then((data) => {
-        //funkcja która iteruje odpowiednią ilość(ustalaną w zależności od wybranej opcji) elementów tablicy. Objęte elementy będą wrzucane do tablicy i wyświtlane na stronie.
+        //iterate certain number of array elements in order to display them in the forecast.
         const forecast = data.list.slice(0, this.state.forecastNum);
         let array = [];
         if (forecast.length === 9) {

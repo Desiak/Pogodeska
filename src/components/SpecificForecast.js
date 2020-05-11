@@ -1,8 +1,8 @@
 import React from "react";
 import SingleForecast from "./SingleForecast";
-const SpecificForecast = props => {
+const SpecificForecast = (props) => {
   const forecast = [props.forecast];
-  const displayWeather = forecast[0].map(day => {
+  const displayWeather = forecast[0].map((day) => {
     return (
       <SingleForecast
         key={day.time}
@@ -26,6 +26,7 @@ const SpecificForecast = props => {
         id="carouselForecast"
         className="carousel slide"
         data-ride="carousel"
+        data-interval="4000"
       >
         <div className="carousel-inner">
           <div className="carousel-item active" id="first">
