@@ -1,6 +1,6 @@
 import React from "react";
 
-const BasicInfo = props => {
+const BasicInfo = (props) => {
   const hours = (props.sunset - props.sunrise) / 3600;
   const hoursFull = Math.floor((props.sunset - props.sunrise) / 3600);
   const minutes = Math.floor((hours - hoursFull) * 60);
@@ -37,6 +37,11 @@ const BasicInfo = props => {
         <p>
           Długość dnia: {hoursFull} godzin i {minutes} minut.
         </p>
+      </div>
+      <div className="slide-down">
+        <p className="arrow">></p>
+        <p>Przewiń</p>
+        <p className="arrow">></p>
       </div>
     </div>
   );

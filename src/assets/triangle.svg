@@ -1,0 +1,22 @@
+<svg width="1920" height="1080" viewBox="0 0 1920 1080" fill="red" xmlns="http://www.w3.org/2000/svg">
+<path id="triangle" d="M980.848 0H1920V1080H980.848V823H1131.5H1380L980.848 142L572.5 823H808.5H980.848V1080H0V0H980.848Z" fill="url(#pattern1)"/>
+<defs>
+<linearGradient id="paint0_linear" x1="960" y1="0" x2="960" y2="1080" gradientUnits="userSpaceOnUse">
+<stop stop-color="#200505"/>
+<stop offset="1" stop-color="#C0AE7F" stop-opacity="1"/>
+</linearGradient>
+<pattern
+                id="pattern1"
+                height="100%"
+                width="100%"
+                patternContentUnits="objectBoundingBox"
+              >
+                <image
+                  height="1"
+                  width="1"
+                  preserveAspectRatio="none"
+                  href="https://images.unsplash.com/reserve/Af0sF2OS5S5gatqrKzVP_Silhoutte.jpg?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80"
+                />
+              </pattern>
+</defs>
+</svg>

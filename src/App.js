@@ -4,7 +4,9 @@ import DayMenu from "./components/DayMenu";
 import { setInterval } from "timers";
 import SpecificForecast from "./components/SpecificForecast";
 import BasicInfo from "./components/BasicInfo";
-import video from "./assets/backwideo1.mp4";
+import galaxy from "./assets/galaxy.jpg";
+import forest from "./assets/forest1.jpg";
+
 //key
 const APIKey = "efa2ef11f117f7485b2fca8e87a3a2f5";
 class App extends React.Component {
@@ -166,9 +168,43 @@ class App extends React.Component {
   render() {
     return (
       <div className="container">
-        <video autoPlay="autoplay" loop="loop" muted className="video">
-          <source src={video} type="video/mp4"></source>
-        </video>
+        <div className="background">
+          <div className="imgContainer">
+            <img id="backgroundImg" src={galaxy} alt="galaxy" />
+          </div>
+          <svg
+            width="1920"
+            height="1080"
+            viewBox="0 0 1920 1080"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            preserveAspectRatio="xMinYMin meet"
+          >
+            <path
+              id="Polygon1"
+              d="M980.848 0H1920V1080H980.848V823H1131.5H1380L980.848 142L572.5 823H808.5H980.848V1080H0V0H980.848Z"
+              fill="url(#pattern1)"
+            />
+            <defs>
+              <clipPath id="clip0">
+                <rect width="1920" height="1080" fill="white" />
+              </clipPath>
+              <pattern
+                id="pattern1"
+                height="100%"
+                width="100%"
+                patternContentUnits="objectBoundingBox"
+              >
+                <image
+                  height="1"
+                  width="1"
+                  preserveAspectRatio="none"
+                  href={forest}
+                />
+              </pattern>
+            </defs>
+          </svg>
+        </div>
         <div className="App">
           <div className="header">
             <p>Prognoza pogody</p>
