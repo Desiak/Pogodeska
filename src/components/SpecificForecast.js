@@ -21,7 +21,10 @@ const SpecificForecast = (props) => {
   const slideThree = displayWeather.slice(6, 9);
 
   return (
-    <div className="forecast-header">
+    <div className="forecast">
+      <div className="close" onClick={props.hide}>
+        <i class="fas fa-times-circle"></i>
+      </div>
       <div
         id="carouselForecast"
         className="carousel slide"

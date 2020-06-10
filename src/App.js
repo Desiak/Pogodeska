@@ -6,7 +6,6 @@ import SpecificForecast from "./components/SpecificForecast";
 import BasicInfo from "./components/BasicInfo";
 import galaxy from "./assets/galaxy.jpg";
 import forest from "./assets/forest1.jpg";
-
 //key
 const APIKey = "efa2ef11f117f7485b2fca8e87a3a2f5";
 class App extends React.Component {
@@ -173,12 +172,10 @@ class App extends React.Component {
             <img id="backgroundImg" src={galaxy} alt="galaxy" />
           </div>
           <svg
-            width="1920"
-            height="1080"
             viewBox="0 0 1920 1080"
+            preserveAspectRatio="xMidYMid slice"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
-            preserveAspectRatio="xMinYMin meet"
           >
             <path
               id="Polygon1"
