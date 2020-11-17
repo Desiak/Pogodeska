@@ -8,7 +8,7 @@ const Day = (props) => {
       <img
         className="icon"
         src={`http://openweathermap.org/img/wn/${icon}.png`}
-        alt="alt"
+        alt="icon unavailable"
       />
       <p className="day-description">{desc}</p>
 
