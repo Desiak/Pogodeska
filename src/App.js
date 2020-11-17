@@ -1,11 +1,9 @@
 import React from "react";
 import "./css/style.css";
-import DayMenu from "./components/DayMenu";
 import { setInterval } from "timers";
-import SpecificForecast from "./components/SpecificForecast";
-import BasicInfo from "./components/BasicInfo";
-import galaxy from "./assets/galaxy.jpg";
-import forest from "./assets/forest1.jpg";
+import Forecast from "./components/Forecast";
+import Info from "./components/Info";
+import SelectCity from "./components/SelectCity";
 //key
 const APIKey = "efa2ef11f117f7485b2fca8e87a3a2f5";
 class App extends React.Component {
@@ -13,44 +11,76 @@ class App extends React.Component {
     data: new Date(),
     hour: null,
     day: null,
-    displayForecast: false,
     sunrise: 0,
     sunset: 0,
-    toggleMenu: false,
     city: "Kraków",
     forecast: null,
-    forecastNum: 0,
+    lon: 19.57,
+    lat: 50.03,
+    currentTime: null,
+    cityPending: null,
   };
-  //toggle menu
-  onClickToggle = () => {
-    this.setState({ toggleMenu: !this.state.toggleMenu });
-  };
-  //get basic info (day, date, sunrise, sunset)
-  getBasicInfo = () => {
-    const API = `https://api.openweathermap.org/data/2.5/weather?q=${this.state.city}&APPID=${APIKey}&units=metric&lang=pl`;
 
-    fetch(API)
-      .then((response) => {
-        if (response.ok) {
-          return response;
-        }
-        throw Error("Nie udało się");
-      })
-      .then((response) => response.json())
-      .then((data) => {
-        this.setState({
-          sunrise: data.sys.sunrise,
-          sunset: data.sys.sunset,
-        });
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+  onClickSelectCity = (city) => {
+    let lat;
+    let lon;
+    const infoWrapper = document.querySelector(".info-wrapper");
+    const forecastWrapper = document.querySelector(".forecast-container");
+    switch (city) {
+      case "Kraków":
+        lat = 50.03;
+        lon = 19.57;
+        break;
+      case "Warszawa":
+        lat = 52.12;
+        lon = 21.02;
+        break;
+      case "Rzeszów":
+        lat = 50;
+        lon = 22;
+        break;
+      case "Poznań":
+        lat = 52.25;
+        lon = 16.55;
+        break;
+      case "Wrocław":
+        lat = 51.07;
+        lon = 17.02;
+        break;
+      case "Gdańsk":
+        lat = 54.22;
+        lon = 18.38;
+        break;
+      case "Łódź":
+        lat = 51.47;
+        lon = 19.28;
+        break;
+      case "Katowice":
+        lat = 50;
+        lon = 19.01;
+        break;
+      case "Lublin":
+        lat = 51.14;
+        lon = 22.34;
+        break;
+      default:
+        console.log("coś nie działa");
+    }
+    this.setState({
+      cityPending: city,
+      lat: lat,
+      lon: lon,
+    });
+
+    infoWrapper.classList.add("hide");
+    forecastWrapper.classList.add("hide");
   };
 
   //get forecast
-  getWeather = () => {
-    const API = `https://api.openweathermap.org/data/2.5/forecast?q=${this.state.city},PL&appid=${APIKey}&units=metric&lang=pl`;
+  getWeather = (lon = 19.57, lat = 50.03) => {
+    const API = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=hourly,minutely&appid=${APIKey}&units=metric&lang=pl`;
+    const infoWrapper = document.querySelector(".info-wrapper");
+    const forecastWrapper = document.querySelector(".forecast-container");
 
     fetch(API)
       .then((response) => {
@@ -61,63 +91,36 @@ class App extends React.Component {
       })
       .then((response) => response.json())
       .then((data) => {
-        //iterate certain number of array elements in order to display them in the forecast.
-        const forecast = data.list.slice(0, this.state.forecastNum);
-        let array = [];
-        if (forecast.length === 9) {
-          array = forecast;
-        } else if (forecast.length === 17) {
-          array = forecast.filter((x, i) => i % 2 === 0);
-        } else if (forecast.length === 33) {
-          array = forecast.filter((x, i) => i % 4 === 0);
-        }
-        const arrForecast = array.map((elem) => {
-          return {
-            time: elem.dt_txt,
-            temp: elem.main.temp,
-            feelsTemp: elem.main.feels_like,
-            press: elem.main.pressure,
-            humidity: elem.main.humidity,
-            wind: elem.wind.speed,
-            description: elem.weather[0].description,
-          };
-        });
+        infoWrapper.classList.remove("hide");
+        forecastWrapper.classList.remove("hide");
+
         this.setState({
-          forecast: arrForecast,
+          forecast: data,
+          currentTime: data.current.dt,
+          sunset: data.current.sunset,
+          sunrise: data.current.sunrise,
         });
-      })
-      .catch((err) => {
-        console.log(err);
       });
   };
 
-  display96hForecast = () => {
-    this.getWeather();
-    this.setState({
-      displayForecast: true,
-      displayToday: false,
-      displayTomorrow: false,
-      forecastNum: 33,
-    });
-  };
-
-  display48hForecast = () => {
-    this.getWeather();
+  getGeolocation = (pos) => {
+    const lat = pos.coords.latitude;
+    const lon = pos.coords.longitude;
+    const infoWrapper = document.querySelector(".info-wrapper");
+    const forecastWrapper = document.querySelector(".forecast-container");
 
     this.setState({
-      displayForecast: true,
-      forecastNum: 17,
+      lat: lat,
+      lon: lon,
+      cityPending: "u Ciebie :)",
     });
+    infoWrapper.classList.add("hide");
+    forecastWrapper.classList.add("hide");
   };
 
-  display24hForecast = () => {
-    this.getWeather();
-    this.setState({
-      displayForecast: true,
-      forecastNum: 9,
-    });
+  getLocalWeather = () => {
+    navigator.geolocation.getCurrentPosition(this.getGeolocation);
   };
-
   getCurrentTime = () => {
     this.setState({
       hour: new Date().toLocaleTimeString(),
@@ -140,99 +143,87 @@ class App extends React.Component {
     });
   };
 
-  citySelector = (e) => {
-    this.setState({
-      city: e.target.value,
-    });
-  };
-
-  onChangeInfo = () => {
-    this.getBasicInfo();
-    this.getWeather();
-  };
-
-  onClickHide = () => {
-    this.setState({
-      displayForecast: false,
-    });
-  };
-
   componentDidMount() {
+    const infoSelector = document.querySelector(".info-wrapper");
+
     this.getCurrentDay();
     setInterval(this.getCurrentTime, 1000);
     this.getWeather();
-    this.getBasicInfo();
+
+    infoSelector.addEventListener("transitionend", () => {
+      this.getWeather(this.state.lon, this.state.lat);
+      this.setState({
+        city: this.state.cityPending,
+      });
+    });
   }
 
+  calculateSunPosition = () => {
+    //selectors
+    const sunContainer = document.querySelector(".sun-container");
+    const sun = document.querySelector(".sun");
+    const horizon = document.querySelector(".horizon");
+    const moon = document.querySelector(".moon");
+    //values
+    const dayLength = (this.state.sunset - this.state.sunrise) / 3600;
+    const currentTime = (this.state.currentTime - this.state.sunrise) / 3600;
+    const sunPositionX = (currentTime / dayLength) * sunContainer.clientWidth;
+    const sunPositionY =
+      ((-4 * sunContainer.clientHeight) /
+        (sunContainer.clientWidth * sunContainer.clientWidth)) *
+      sunPositionX *
+      (sunPositionX - sunContainer.clientWidth);
+    //final sun position
+    const finalX = Math.floor(sunPositionX);
+    const finalY = sunContainer.clientHeight - Math.floor(sunPositionY);
+
+    //check whether its day or night:
+    if (
+      finalX < sunContainer.clientWidth &&
+      finalY < sunContainer.clientHeight
+    ) {
+      //if its day- display bright sky and sun
+      sun.style.left = `${finalX}px`;
+      sun.style.top = `${finalY}px`;
+      moon.style.display = "none";
+      sun.style.display = "unset";
+      sunContainer.style.backgroundColor = "rgb(202, 226, 247)";
+      horizon.style.backgroundColor = "rgb(123, 201, 134)";
+    } else {
+      //in the night display dark sky and moon
+      sun.style.display = "none";
+      moon.style.display = "unset";
+
+      sunContainer.style.backgroundColor = "rgba(104, 144, 245, 1)";
+      horizon.style.backgroundColor = "rgba(209, 218, 241, 1)";
+    }
+  };
+
+  componentDidUpdate() {
+    this.calculateSunPosition();
+  }
   render() {
     return (
-      <div className="container">
-        <div className="background">
-          <div className="imgContainer">
-            <img id="backgroundImg" src={galaxy} alt="galaxy" />
-          </div>
-          <svg
-            viewBox="0 0 1920 1080"
-            preserveAspectRatio="xMidYMid slice"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              id="Polygon1"
-              d="M980.848 0H1920V1080H980.848V823H1131.5H1380L980.848 142L572.5 823H808.5H980.848V1080H0V0H980.848Z"
-              fill="url(#pattern1)"
-            />
-            <defs>
-              <clipPath id="clip0">
-                <rect width="1920" height="1080" fill="white" />
-              </clipPath>
-              <pattern
-                id="pattern1"
-                height="100%"
-                width="100%"
-                patternContentUnits="objectBoundingBox"
-              >
-                <image
-                  height="1"
-                  width="1"
-                  preserveAspectRatio="none"
-                  href={forest}
-                />
-              </pattern>
-            </defs>
-          </svg>
-        </div>
-        <div className="App">
-          <div className="header">
-            <p>Prognoza pogody</p>
-          </div>
-
-          <BasicInfo
-            changeInfo={this.onChangeInfo}
-            citySelector={this.citySelector}
-            city={this.state.city}
-            day={this.state.day}
-            hour={this.state.hour}
-            sunset={this.state.sunset}
-            sunrise={this.state.sunrise}
-          />
-          <DayMenu
-            switch={this.display24hForecast}
-            switchTomorrow={this.display48hForecast}
-            switch3days={this.display96hForecast}
-            toggle={this.state.toggleMenu}
-            onToggle={this.onClickToggle}
-            dispInfo={this.state.displayForecast}
-          />
-
-          {this.state.displayForecast ? (
-            <SpecificForecast
-              forecast={this.state.forecast}
-              city={this.state.city}
-              hide={this.onClickHide}
-            />
-          ) : null}
-        </div>
+      <div className="App">
+        <Info
+          city={this.state.city}
+          day={this.state.day}
+          hour={this.state.hour}
+          sunset={this.state.sunset}
+          sunrise={this.state.sunrise}
+        />
+        <SelectCity
+          selectCity={this.onClickSelectCity}
+          getLocalWeather={this.getLocalWeather}
+        ></SelectCity>
+        <Forecast
+          getWeather={this.getWeather}
+          forecast={this.state.forecast}
+          city={this.state.city}
+          hide={this.onClickHide}
+          day={this.state.day}
+          sunset={this.state.sunset}
+        />
       </div>
     );
   }

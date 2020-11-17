@@ -1,0 +1,97 @@
+@media (max-width: 1079px) {
+  .App {
+    .select-city {
+      border-radius: 0 0 0 60px;
+      width: 100%;
+      padding-right: 20px;
+    }
+    .forecast {
+      border-radius: 80px 0 0 0;
+      width: 100%;
+      .forecast-container {
+        .daily-forecast {
+          margin: 20px 10px;
+          padding: 20px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 899px) {
+  .App {
+    grid-template-columns: unset;
+    grid-template-rows: unset;
+    height: unset;
+    .info {
+      grid-area: unset;
+      border-radius: 0 0 60px 60px;
+      margin: 0;
+      align-self: unset;
+      justify-self: center;
+      padding: unset;
+      height: unset;
+      padding-top: 20px;
+      .info-city {
+        order: -2;
+      }
+      .info-wrapper {
+        .info-day,
+        .info-date {
+          flex-basis: 50%;
+        }
+      }
+      .info-clock {
+        order: -1;
+      }
+      .info-day {
+        border-right: 1px solid rgb(118, 118, 118);
+      }
+    }
+    .select-city {
+      grid-area: unset;
+      border-radius: 60px;
+      width: 90%;
+      justify-self: center;
+      padding: 0;
+      .hint {
+        margin-top: 20px;
+      }
+      .local-city {
+        flex-basis: 100%;
+      }
+      .cities-table {
+        margin: 20px;
+      }
+    }
+    .forecast {
+      grid-area: unset;
+      width: 90%;
+      justify-self: center;
+      border-radius: 80px 80px 0 0;
+    }
+  }
+}
+
+@media (max-width: 639px) {
+  .App {
+    .select-city {
+      .cities-table {
+        grid-gap: 10px;
+      }
+    }
+    .forecast {
+      .forecast-container {
+        .daily-forecast {
+          flex-wrap: wrap;
+          .day-name {
+            font-size: 1.8em;
+          }
+          .icon {
+            flex-basis: 15%;
+          }
+        }
+      }
+    }
+  }
+}
